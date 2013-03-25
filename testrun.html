@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="cleaner.js"></script>
+
+</head>
+
+<body>
+
+<script>
+
+	function goSanitize() {
+		
+		var s = document.getElementById("input").value;
+		
+		var attributeList = ["src", "attr1", "attr2", "autofocus"];
+		
+		var r = Cleaner.sanitize(s, "div", attributeList, "img", attributeList, false, false);
+		
+		console.log("original string:  "+s+"\nresulting string: "+r);
+		
+		document.getElementById("output").value = r;
+	}
+	
+	
+	
+</script>
+<input id="input" value="<div autofocus  src='google.com?hej<>hopp' attr1='val bb bbb' attr2='javascript:val2'> hej <script>alert('hej');</script>hoppsan <img src='google.com?user=tomten' />" style="width:400px; height: 30px;" />
+<input type="button" value=">> sanitize >>" onclick="goSanitize();" />
+<input id="output" style="width:400px; height: 30px;" />
+</body>
+</html>
