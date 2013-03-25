@@ -1,4 +1,4 @@
 cleaner
 =======
 
-Client-side JavaScript script that cleans (sanitizes) HTML content for output in web browser.
+Client-side JavaScript script that cleans (sanitizes) HTML content for output in web browser. 
